@@ -72,7 +72,7 @@ threshold.contact<-function(randomangle="close"){
   C.emit<-50 #in arbitrary units
   
   #exhalation rates
-  X<-(rtrunc(points,"norm",a=0,mean=16.3,sd=4.15)/(24*60*60))
+  X<-(rtrunc(points,"norm",a=9,mean=16.3,sd=4.15)/(24*60*60))
   
   Q<-C.emit * X #viral particles/m^3 x m^3/s exhalation rates (Exposure Factors Handbook)
   
@@ -97,7 +97,7 @@ threshold.contact<-function(randomangle="close"){
   C[x>0]<-(Q[x>0]/U[x>0])*(1/(2*pi*omega.y[x>0]*omega.z[x>0]*1))*exp(-y[x>0]^2/(2*omega.y[x>0]^2))*exp(-z[x>0]^2/(2*omega.z[x>0]^2))
   C[x<=0]<-0
   
-  I<-(rtrunc(points,"norm",a=0,mean=16.3,sd=4.15)/(24*60))
+  I<-(rtrunc(points,"norm",a=9,mean=16.3,sd=4.15)/(24*60))
   
   duration<-30 
   
