@@ -72,11 +72,11 @@ A<-ggplot(subframe,aes(x=days,y=risks,group=risk.start))+
   geom_hline(yintercept=1.3e-03,linetype="dashed",size=1)+
   scale_x_continuous(name="Days Since Exposure")+
   scale_y_continuous(name="Prob(infectiousness)",limits = c(0, 0.015))+
-  annotate("text",x=22,y=0.0055,label="0.50% Threshold",size=6.5)+
-  annotate("text",x=22,y=0.0018,label="0.13% Threshold",size=6.5)+
+  annotate("text",x=22,y=0.0056,label="0.50% Threshold",size=8)+
+  annotate("text",x=22,y=0.0019,label="0.13% Threshold",size=8)+
   annotate("text",x=1,y=.015,label="A",size=10)+
-  theme_pubr()+theme(axis.title.x = element_text(size=20),axis.title.y = element_text(size=20),title = element_text(size=20),
-                     axis.text=element_text(size=20))
+  theme_pubr()+theme(axis.title.x = element_text(size=25),axis.title.y = element_text(size=25),title = element_text(size=25),
+                     axis.text=element_text(size=25))
 windows()
 A
 
@@ -121,13 +121,13 @@ B<-ggplot(frame[frame$risk.start==high & frame$fraction.asymptomatic!=0.25,],aes
   scale_x_continuous(name="Days Since Exposure")+
   scale_y_continuous(name="Prob(infectiousness)",limits = c(0, 0.015))+
   geom_hline(yintercept=1.3e-03,linetype="dashed",size=1)+
-  annotate("text",x=18,y=0.010,label="14 days (20% Asymptomatic)",size=6.5)+
+  annotate("text",x=18,y=0.010,label="14 days (20% Asymptomatic)",size=8)+
   #annotate("text",x=18,y=0.009,label="Quarantine for 14 days (25% Asymptomatic)",size=6.5)+
-  annotate("text",x=18,y=0.008,label="16 days (50% Asymptomatic)",size=6.5)+
+  annotate("text",x=18,y=0.008,label="16 days (50% Asymptomatic)",size=8)+
   annotate("text",x=1,y=.015,label="B",size=10)+
-  theme_pubr()+theme(axis.title.x = element_text(size=20),axis.title.y = element_text(size=20),
-                     legend.text = element_text(size=20), legend.title=element_text(size=20),
-                     axis.text=element_text(size=20),title=element_text(size=20),
+  theme_pubr()+theme(axis.title.x = element_text(size=25),axis.title.y = element_text(size=25),
+                     legend.text = element_text(size=25), legend.title=element_text(size=25),
+                     axis.text=element_text(size=25),title=element_text(size=25),
                      legend.position = "none")
 
 windows()
@@ -148,12 +148,12 @@ C<-ggplot(data=frame2)+geom_point(aes(x=days,y=risks,group=type,colour=type,shap
     geom_vline(xintercept=4,linetype="solid",size=1)+
     geom_area(data=subframe8,aes(x = ifelse(days<=12 , days, 0),y=risks),fill="blue",alpha=0.3)+
     geom_area(data=subframe7,aes(x = ifelse(days<=15.9 , days, 0),y=risks),fill="red",alpha=0.3)+
-    theme_pubr()+theme(axis.title.x = element_text(size=20),axis.title.y = element_text(size=20),
-                   legend.text = element_text(size=20), legend.title=element_text(size=20),
-                   axis.text=element_text(size=20),title=element_text(size=20),
+    theme_pubr()+theme(axis.title.x = element_text(size=25),axis.title.y = element_text(size=25),
+                   legend.text = element_text(size=25), legend.title=element_text(size=25),
+                   axis.text=element_text(size=25),title=element_text(size=25),
                    legend.position="none")+
-    annotate("text",x=18,y=0.010,label="13 days with testing",size=6.5)+
-    annotate("text",x=18,y=0.008,label="16 days without testing",size=6.5)+
+    annotate("text",x=18,y=0.010,label="13 days with testing",size=8)+
+    annotate("text",x=18,y=0.008,label="16 days without testing",size=8)+
     annotate("text",x=1,y=.015,label="C",size=10)+
     #scale_colour_discrete(name="",labels=c("Negative Test on Day 4","No Test"))+
     #scale_shape_discrete(name="",labels=c("Negative Test on Day 4","No Test"))+
