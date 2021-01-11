@@ -1,7 +1,7 @@
 if("lamW" %in% rownames(installed.packages())==FALSE){install.packages("lamW"); require(lamW)}else{require(lamW)}
 library(ggplot2)
 # Generated data
-lambda <- 3.70E-06
+#lambda <-3.70E-6 (defined below)
 mu <- log(100)
 sigsq <- log10(16)^2
 
@@ -23,7 +23,7 @@ LISapprox <- function(mu = mu, sigsq = sigsq, lambda = lambda) {
   return(1 - LIS)
 }
 
-lambda <- 3.10E-06
+lambda <- 3.70E-06
 N <- 20
 AppPInfect <- c()
 ExPInfect <- c()
@@ -36,6 +36,7 @@ for (i in 1:N) {
   IS[i] <- rLISest(10000, Mu_Or_LogDose[i], sigsq, lambda)
 }
 
+windows()
 ggplot() +
   geom_line(aes(x = Mu_Or_LogDose, y = AppPInfect, color = 'Eq. 6 (approx. exp. of funct.)')) + geom_point(aes(x = Mu_Or_LogDose, y = AppPInfect)) +
   geom_line(aes(x = Mu_Or_LogDose, y = ExPInfect, color = 'Eq. 5 (function of exp.)')) + geom_point(aes(x = Mu_Or_LogDose, y = ExPInfect)) +
