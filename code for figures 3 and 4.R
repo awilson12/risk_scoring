@@ -13,14 +13,14 @@ figure4<-read.csv('figure4_data.csv')
 
 #initial risk
 
-lambda<-3.50E-6
+lambda<-3.70E-6 #updated on 1/20/21
 
-weighted.sum<-32.25
+weighted.sum<-30 #updated on 1/10/2021
 
 #highest risk individual 15 min close contact
 high<-1-exp(-lambda*(weighted.sum*1e2)) #high shedder: 1 x 10^2
 
-#lowest risk individual, 15 min close contact
+#example of low risk
 low<-0.002 #risk that would require quarantine with threshold of 0.13%
 
 risk.start<-c(high,low)
