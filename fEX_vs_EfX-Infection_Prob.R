@@ -1,7 +1,7 @@
 if("lamW" %in% rownames(installed.packages())==FALSE){install.packages("lamW"); require(lamW)}else{require(lamW)}
 library(ggplot2)
 # Generated data
-lambda <- 3.10E-06
+lambda <- 3.70E-06
 mu <- log(100)
 sigsq <- log10(16)^2
 
