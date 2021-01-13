@@ -13,7 +13,7 @@ figure4<-read.csv('figure4_data.csv')
 
 #initial risk
 
-lambda<-3.70E-6 #updated on 1/20/21
+lambda<-3.70E-6 #updated on 1/10/21
 
 weighted.sum<-30 #updated on 1/10/2021
 
